@@ -62,6 +62,7 @@ spec:
           privileged: true
       - name: "increaseHTTP"
         image: "busybox"
+        imagePullPolicy: "Always"
         command: ["echo", "http.max_content_length: 500mb", "\>\>", "config/elasticsearch.yml"]
         securityContext:
           allowPrivilegeEscalation: true
