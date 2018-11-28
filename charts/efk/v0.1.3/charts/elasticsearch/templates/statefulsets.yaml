@@ -69,6 +69,8 @@ spec:
           value: {{ template "elasticsearch.fullname" . }}
         - name: discovery.zen.minimum_master_nodes
           value: "{{ .Values.master.minimum_master_nodes }}"
+        - name: http.max_content_length
+          value: "500mb"
         - name: KUBERNETES_NAMESPACE
           valueFrom:
             fieldRef:
