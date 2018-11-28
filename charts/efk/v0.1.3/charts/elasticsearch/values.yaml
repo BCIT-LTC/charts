@@ -16,6 +16,8 @@ terminationGracePeriodSeconds: 30  # Duration in seconds a elasticsearch pod nee
 master:
   name: master
   exposeHttp: true
+  http:
+    max_content_length: "500mb"  
   replicas: 3
   minimum_master_nodes: "2"
   heapSize: "512m"
