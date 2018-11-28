@@ -59,14 +59,7 @@ spec:
         command: ["sysctl", "-w", "vm.max_map_count=262144"]
         securityContext:
           allowPrivilegeEscalation: true
-          privileged: true
-      - name: "increaseHTTP"
-        image: "busybox"
-        imagePullPolicy: "Always"
-        command: ["echo", "http.max_content_length: 500mb", ">> config/elasticsearch.yml"]
-        securityContext:
-          allowPrivilegeEscalation: true
-          privileged: true        
+          privileged: true   
       containers:
       - name: elasticsearch
         env:
